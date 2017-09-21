@@ -1,5 +1,27 @@
 const path = require('path');
 
 module.exports = {
-  entry: './app/index.js'
+  entry: {
+    main: './app/index.js'
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+      }
+    ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  }
 }

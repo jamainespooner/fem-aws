@@ -23,8 +23,9 @@
     "webpack-dev-server": "^2.8.2"
   },
   "scripts": {
-    "build": "",
+    "build": "webpack",
     "build:watch": "",
+    "dev": "webpack-dev-server --open",
     "test": "",
     "test:watch": ""
   }
