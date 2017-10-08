@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import store from './configureStore';
 import App from './components/App';
 
-export default render(
+render(
   <App store={store} />,
   document.getElementById('root')
 )

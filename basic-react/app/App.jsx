@@ -1,6 +1,6 @@
 import React from 'react';
 
 const App = () =>
-  <div>Ting</div>
+  <h1>Basic tings dem</h1>
 
 export default App

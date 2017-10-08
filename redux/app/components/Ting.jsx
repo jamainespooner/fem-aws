@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 const Ting = ({ isIt }) =>
-  <div>Ting</div>
+  <h1>Redux Ting</h1>
 
 const mapStateToProps = state => ({
   isIt: state,
