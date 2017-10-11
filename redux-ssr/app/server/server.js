@@ -10,16 +10,21 @@ import React from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
+import { StaticRouter } from 'react-router';
 
 import counterApp from '../common/reducers/'
-import App from '../common/components/App'
+import Routes from '../common/components/Routes'
 
 const app = Express()
 const port = 3000
 
 const compiler = webpack(webpackConfig)
 app.use(webpackDevMiddleware(compiler, {
-  noInfo: false, publicPath: webpackConfig.output.publicPath,
+  noInfo: false,
+  publicPath: webpackConfig.output.publicPath,
+  stats: {
+    colors: true,
+  }
 }))
 
 const renderFullPage = (html, preloadedState) => `
@@ -45,7 +50,9 @@ const handleRender = (req, res) => {
 
   const html = renderToString(
     <Provider store={store}>
-      <App />
+      <StaticRouter location={req.url} context={{}}>
+        <Routes />
+      </StaticRouter>
     </Provider>
   )
 
@@ -54,9 +61,7 @@ const handleRender = (req, res) => {
   res.send(renderFullPage(html, preloadedState))
 }
 
-
 app.use(handleRender)
-// app.get('/', handleRender)
 
 app.listen(port, error => {
   if (error) {
