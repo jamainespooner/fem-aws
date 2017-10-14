@@ -36,7 +36,6 @@
     "build:redux": "webpack --config webpack.redux.js",
     "dev:redux": "webpack-dev-server --config webpack.redux.js",
     "build:ssr": "node ./redux-ssr/app/server/index.js",
-    "dev:ssr": "node ./app/server/index.js",
     "test": "",
     "test:watch": ""
   }
