@@ -6,8 +6,8 @@
   "dependencies": {
     "babel-register": "^6.26.0",
     "express": "^4.15.5",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2"
@@ -22,7 +22,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
     "chai": "^4.1.2",
-    "enzyme": "^2.9.1",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jsdom": "^11.3.0",
     "mocha": "^3.5.3",
     "nodemon": "^1.12.1",
     "webpack": "^3.6.0",
@@ -37,6 +39,6 @@
     "dev:redux": "webpack-dev-server --config webpack.redux.js",
     "build:ssr": "node ./redux-ssr/app/server/index.js",
     "test": "",
-    "test:watch": ""
+    "test:watch": "mocha -w --opts ./mocha.opts"
   }
 }
