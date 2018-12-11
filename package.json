@@ -35,7 +35,7 @@
   "scripts": {
     "build": "webpack --config webpack.redux.js",
     "dev": "webpack-dev-server --config webpack.redux.js",
-    "test": "",
+    "test": "mocha --opts ./mocha.opts",
     "test:watch": "mocha -w --opts ./mocha.opts"
   }
 }
