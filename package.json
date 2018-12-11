@@ -33,7 +33,7 @@
     "webpack-hot-middleware": "^2.19.1"
   },
   "scripts": {
-    "start": "webpack --config webpack.redux.js",
+    "build": "webpack --config webpack.redux.js",
     "dev": "webpack-dev-server --config webpack.redux.js",
     "test": "",
     "test:watch": "mocha -w --opts ./mocha.opts"
