@@ -6,9 +6,10 @@ webpackConfig.devtool = 'inline-source-map'
 webpackConfig.devServer = {
   contentBase: './dist',
   port: 7200,
-  publicPath: '/static/',
+  publicPath: '/',
   hot: false,
   inline: false,
+  historyApiFallback: true,
 }
 
 module.exports = webpackConfig

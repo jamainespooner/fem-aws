@@ -6,7 +6,11 @@ import Home from './Home';
 const App = ({ store }) =>
   <Provider store={store}>
     <Router>
-      <Route path="/" component={Home} />
+      <div>
+        <Route path="/" exact component={Home} />
+        <Route path="/about" render={() => <div>about</div>} />
+        <Route path="/contact" render={() => <div>contact</div>} />
+      </div>
     </Router>
   </Provider>
 
